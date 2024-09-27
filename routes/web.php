@@ -12,16 +12,16 @@ Route::get('/dashboard', function () {
     return view('pages.dashboard');
 });
 
-Route::get('/data_siswa', function () {
-    return view('');
+Route::get('/buku', function () {
+    return view('pages.buku');
 });
 
-Route::get('/peminjaman', function () {
-    return view('');
+Route::get('/DataMember', function () {
+    return view('pages.DataMember');
 });
 
-Route::get('/laporan', function () {
-    return view('');
+Route::get('/DataBuku', function () {
+    return view('pages.DataBuku');
 });
 
 
