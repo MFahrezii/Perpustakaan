@@ -63,6 +63,22 @@
             color: #E3FEF7; /* Warna teks header tabel */
             border-top: 2px solid#003C43 ;
         }
+        .add-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px; /* Menambahkan jarak atas */
+            margin-bottom: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .add-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 @endsection
 
@@ -73,77 +89,33 @@
         <table class="member-table">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>NIS</th>
                     <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>No. Telepon</th>
+                    <th>Kode Kelas</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($siswa as $s)
                 <tr>
-                    <td>001</td>
-                    <td>Dani</td>
+                    <td>{{ $s->nis }}</td>
+                    <td>{{ $s->nama }}</td>
+                    <td>{{ $s->alamat }}</td>
+                    <td>{{ $s->no_telp }}</td>
+                    <td>{{ $s->kode_kelas }}</td>
+                    <td style="text-align: center;">
+                        <a href="/DataMember/edit/{{ $s->nis }}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="/DataMember/hapus/{{ $s->nis }}" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>002</td>
-                    <td>Braga</td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>Dava</td>
-                </tr>
-                <tr>
-                    <td>004</td>
-                    <td>Dolly</td>
-                </tr>
-                <tr>
-                    <td>005</td>
-                    <td>Dwi</td>
-                </tr>
-                <tr>
-                    <td>006</td>
-                    <td>Dzar</td>
-                </tr>
-                <tr>
-                    <td>007</td>
-                    <td>Ilham</td>
-                </tr>
-                <tr>
-                    <td>008</td>
-                    <td>Kezia</td>
-                </tr>
-                <tr>
-                    <td>009</td>
-                    <td>Fauzi</td>
-                </tr>
-                <tr>
-                    <td>010</td>
-                    <td>Fahrezi</td>
-                </tr>
-                <tr>
-                    <td>011</td>
-                    <td>Rama</td>
-                </tr>
-                <tr>
-                    <td>012</td>
-                    <td>Riyan</td>
-                </tr>
-                <tr>
-                    <td>013</td>
-                    <td>Shafira</td>
-                </tr>
-                <tr>
-                    <td>014</td>
-                    <td>Siti</td>
-                </tr>
-                <tr>
-                    <td>015</td>
-                    <td>Tiara</td>
-                </tr>
-                <tr>
-                    <td>016</td>
-                    <td>Yosep</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
+        <div style="margin-top: 20px;">
+            <a href="/DataMember/tambah" class="add-button">Tambah</a>
+        </div>
     </div>
 </div>
 @endsection
