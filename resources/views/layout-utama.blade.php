@@ -88,7 +88,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/laporan" class="nav-link">
-                        LAPORAN
+                        Laporan
                     </a>
                 </li>
               </ul>
